@@ -1,19 +1,22 @@
 /* Copyright (c) 2020 MTHS All rights reserved
  *
- * Created by: Mason
- * Created on: Sep 2025
- * This program ...
+ * Created by: Mason and Sami
+ * Created on: Jan 2026
+ * This program makes the stepper motor rotate.
 */
-
 // variables
 let motor: stepperMotor.Motor
 
 //setup
 basic.showString("READY")
-robotbit.MotorRun(robotbit.Motors.M1A, 150)
 
-// if button A is pressed, LEFT wheel spins foraward
+// when button A pressed rocketship moves up
 input.onButtonPressed(Button.A, function () {
-    robotbit.StepperDual(2880, 2880)
-    basic.pause(100)
+    robotbit.StepperDual(360, 360)
+})
+
+// when button B pressed rocketship moves down
+input.onButtonPressed(Button.B, function () {
+    // Rotate backward
+    robotbit.StepperDual(-360, -360)
 })
